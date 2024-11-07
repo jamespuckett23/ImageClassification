@@ -35,6 +35,7 @@ class Cifar(nn.Module):
         print('### Training... ###')
         for epoch in range(1, max_epoch+1):
             start_time = time.time()
+            epoch_loss = 0.0
             # Shuffle
             shuffle_index = np.random.permutation(num_samples)
             curr_x_train = x_train[shuffle_index]
