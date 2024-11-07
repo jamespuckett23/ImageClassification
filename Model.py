@@ -64,7 +64,7 @@ class Cifar(nn.Module):
                 # Forward pass
                 self.optimizer.zero_grad()
                 outputs = self.network(batch_x)
-                loss = self.loss_fn(outputs, batch_y)
+                loss = self.loss(outputs, batch_y)
 
                 ### YOUR CODE HERE
                 self.optimizer.zero_grad()
