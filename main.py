@@ -17,7 +17,9 @@ def configure():
     parser.add_argument("--lr", type=float, default=0.01)
     parser.add_argument("--gpu", type=int, default=0)
     ### YOUR CODE HERE
-    return parser.parse_args()
+    # return parser.parse_args()
+    args, unknown = parser.parse_known_args()
+    return args
 
 def main(config):
     print("--- Preparing Data ---")
