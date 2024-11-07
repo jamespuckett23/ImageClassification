@@ -19,6 +19,7 @@ def configure():
     ### YOUR CODE HERE
     # return parser.parse_args()
     args, unknown = parser.parse_known_args()
+    print("Unrecognized arguments:", unknown)
     return args
 
 def main(config):
