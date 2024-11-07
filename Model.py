@@ -18,7 +18,7 @@ class Cifar(nn.Module):
         super(Cifar, self).__init__()
         self.config = config
         self.network = resnet18()
-        self.loss = nn.CrossEntropyLoss()
+        self.loss_fn = nn.CrossEntropyLoss()
         self.optimizer = optim.Adam(self.network.parameters(),  \
                              self.config.lr, weight_decay=self.config.weight_decay)
         self.scheduler = optim.lr_scheduler.StepLR(
@@ -64,7 +64,7 @@ class Cifar(nn.Module):
                 # Forward pass
                 self.optimizer.zero_grad()
                 outputs = self.network(batch_x)
-                loss = self.loss(outputs, batch_y)
+                loss = self.loss_fn(outputs, batch_y)
 
                 ### YOUR CODE HERE
                 self.optimizer.zero_grad()
