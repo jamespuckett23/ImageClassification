@@ -98,7 +98,23 @@ class Cifar(nn.Module):
         plt.title('Training Loss over Epochs')
         plt.legend()
         plt.grid(True)
-        plt.savefig("training_loss_curve.png")
+        plt.show()
+        # plt.savefig("training_loss_curve.png")
+
+        # Directory where you want to save the image
+        save_dir = '/content/data'
+        os.makedirs(save_dir, exist_ok=True)
+
+        # Define the path for saving the plot
+        image_path = os.path.join(save_dir, "training_loss_curve.png")
+
+        # Save the plot before showing it
+        plt.savefig(image_path)
+        plt.show()
+
+        # Print the path to confirm where it's saved
+        print("Plot saved to:", image_path)
+
         print("Training loss curve saved as training_loss_curve.png")
         ### YOUR CODE HERE
 
